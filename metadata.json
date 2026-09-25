@@ -1,0 +1,6 @@
+{
+  "name": "BikeCare AI",
+  "description": "AI-powered two-wheeler diagnostics, predictive maintenance, service booking system, and workshop admin management.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
