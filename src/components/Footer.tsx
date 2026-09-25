@@ -74,18 +74,22 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             </div>
           </div>
 
-          {/* Col 4: Dispatch Portal */}
-          <div>
-            <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-3">Workshop Staff</h4>
-            <p className="text-xs text-slate-400 leading-relaxed mb-3">
-              Certified Master Technicians and service managers can access the live dispatch board below.
-            </p>
-            <button
-              onClick={() => onNavigate('admin')}
-              className="w-full py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-amber-400 border border-amber-500/30 text-xs font-bold transition-all text-center block"
-            >
-              Open Workshop Admin Portal →
-            </button>
+          {/* Col 4: Service Guarantee & Trust */}
+          <div className="space-y-3">
+            <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-3">Service Guarantee</h4>
+            <div className="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800 space-y-2 text-slate-300">
+              <div className="flex items-center gap-2 text-emerald-400 font-semibold text-xs">
+                <ShieldCheck className="w-4 h-4 shrink-0" />
+                <span>100% Genuine OEM Spares</span>
+              </div>
+              <p className="text-[11px] text-slate-400 leading-relaxed">
+                All repairs include a 15-day or 500 km warranty. Direct mechanic video updates and transparent live job card tracking.
+              </p>
+            </div>
+            <div className="flex items-center gap-2 text-[11px] text-cyan-400">
+              <Clock className="w-3.5 h-3.5" />
+              <span>Doorstep Pickup & Drop Available</span>
+            </div>
           </div>
 
         </div>
@@ -95,10 +99,6 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             © {new Date().getFullYear()} BikeCare AI Inc. All rights reserved. Powered by Google Gemini AI.
           </div>
           <div className="flex items-center gap-4">
-            <button onClick={() => onNavigate('deploy')} className="text-cyan-400 hover:underline">
-              Free Hosting Deployment Guide
-            </button>
-            <span>•</span>
             <span>15-Day Service Satisfaction Warranty</span>
           </div>
         </div>

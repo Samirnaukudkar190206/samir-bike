@@ -4,21 +4,16 @@ import {
   Sparkles, 
   Calendar, 
   Search, 
-  ShieldCheck, 
-  ShieldAlert, 
-  Rocket, 
   PhoneCall,
-  Lock,
   Layers
 } from 'lucide-react';
 
 interface NavbarProps {
   activeTab: string;
   setActiveTab: (tab: string) => void;
-  isAdminLoggedIn: boolean;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab, isAdminLoggedIn }) => {
+export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab }) => {
   return (
     <header className="sticky top-0 z-50 backdrop-blur-md bg-slate-950/85 border-b border-slate-800/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -94,41 +89,22 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab, isAdmin
               <Layers className="w-4 h-4 text-blue-400" />
               Packages
             </button>
-
-            <button
-              onClick={() => setActiveTab('deploy')}
-              className={`px-3 py-1.5 rounded-lg text-xs font-semibold tracking-wide transition-all flex items-center gap-1.5 ${
-                activeTab === 'deploy'
-                  ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/40'
-                  : 'text-emerald-400/90 hover:text-emerald-300 hover:bg-emerald-500/10'
-              }`}
-            >
-              <Rocket className="w-3.5 h-3.5" />
-              Deploy Free
-            </button>
           </nav>
 
-          {/* Action Area: Emergency Contact & Admin Portal Button */}
+          {/* Action Area: Emergency Contact & Book CTA for customers */}
           <div className="flex items-center gap-3">
             <div className="hidden lg:flex items-center gap-2 text-xs text-slate-400 pr-2 border-r border-slate-800">
               <PhoneCall className="w-3.5 h-3.5 text-cyan-400" />
               <span>Workshop: <strong className="text-slate-200">1-800-BIKE-AI</strong></span>
             </div>
 
-            {/* Dedicated Admin Portal Link */}
+            {/* Customer Book Service Action */}
             <button
-              onClick={() => setActiveTab('admin')}
-              className={`px-3.5 py-2 rounded-xl text-xs font-semibold transition-all flex items-center gap-2 ${
-                activeTab === 'admin'
-                  ? 'bg-amber-500 text-slate-950 font-bold shadow-lg shadow-amber-500/25 ring-2 ring-amber-400/50'
-                  : 'bg-slate-900 hover:bg-slate-800 text-amber-400 border border-amber-500/30 hover:border-amber-400/60'
-              }`}
+              onClick={() => setActiveTab('booking')}
+              className="px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-2 bg-gradient-to-r from-cyan-500 to-emerald-500 hover:from-cyan-400 hover:to-emerald-400 text-slate-950 shadow-md shadow-cyan-500/20 cursor-pointer"
             >
-              <Lock className="w-3.5 h-3.5" />
-              <span>Admin Portal</span>
-              {isAdminLoggedIn && (
-                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-              )}
+              <Calendar className="w-3.5 h-3.5 text-slate-950" />
+              <span>Book Service</span>
             </button>
           </div>
 
@@ -170,15 +146,6 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab, isAdmin
             }`}
           >
             Packages
-          </button>
-          <button
-            onClick={() => setActiveTab('deploy')}
-            className={`px-3 py-1.5 rounded-lg whitespace-nowrap flex items-center gap-1.5 text-emerald-400 bg-slate-900 ${
-              activeTab === 'deploy' ? 'bg-emerald-500 text-slate-950 font-bold' : ''
-            }`}
-          >
-            <Rocket className="w-3.5 h-3.5" />
-            Deploy Free
           </button>
         </div>
 

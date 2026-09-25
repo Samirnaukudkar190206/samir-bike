@@ -178,9 +178,12 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({
           </div>
 
           <div>
-            <h2 className="text-2xl font-black text-white">Workshop Admin Portal</h2>
+            <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-rose-500/20 text-rose-300 border border-rose-500/30 inline-block mb-2">
+              Internal Workshop Portal
+            </span>
+            <h2 className="text-2xl font-black text-white">BikeCare Ops Console</h2>
             <p className="text-xs text-slate-400 mt-1">
-              Restricted to authorized mechanics and workshop dispatchers.
+              Restricted to authorized technicians and workshop dispatchers. This portal is segregated on <code className="text-amber-400 font-mono">/admin</code> and is hidden from public customer access.
             </p>
           </div>
 
@@ -227,9 +230,9 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({
             <button
               type="button"
               onClick={onBackToCustomerSite}
-              className="w-full text-xs text-slate-400 hover:text-white pt-2"
+              className="w-full text-xs text-slate-400 hover:text-white pt-2 transition-colors cursor-pointer"
             >
-              ← Return to Customer Portal
+              ← Go to Customer Website (Storefront)
             </button>
           </form>
         </div>
