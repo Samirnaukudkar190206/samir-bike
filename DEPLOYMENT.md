@@ -120,7 +120,7 @@ server {
 3. Connect your repository.
 4. Set settings:
    - **Runtime**: `Python 3`
-   - **Build Command**: `npm install && npm run build && pip install -r requirements.txt`
+   - **Build Command**: `npm install --legacy-peer-deps && npm run build && pip install -r requirements.txt`
    - **Start Command**: `gunicorn -b 0.0.0.0:$PORT app:app`
 5. Add Environment Variables:
    - `GEMINI_API_KEY`: your Gemini API key.
@@ -130,7 +130,7 @@ server {
 1. Push code to GitHub.
 2. In Railway, click **New Project** → **Deploy from GitHub repo**.
 3. Under **Settings**:
-   - Set Build Command: `npm install && npm run build && pip install -r requirements.txt`
+   - Set Build Command: `npm install --legacy-peer-deps && npm run build && pip install -r requirements.txt`
    - Set Start Command: `gunicorn -b 0.0.0.0:$PORT app:app`
 4. Add environment variables:
    - `GEMINI_API_KEY`: your key
