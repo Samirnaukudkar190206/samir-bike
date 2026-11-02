@@ -98,8 +98,34 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           <div>
             © {new Date().getFullYear()} BikeCare AI Inc. All rights reserved. Powered by Google Gemini AI.
           </div>
-          <div className="flex items-center gap-4">
-            <span>15-Day Service Satisfaction Warranty</span>
+          <div className="flex flex-wrap items-center gap-3">
+            <a 
+              href="/BikeCare_AI_Project_Documentation.pdf" 
+              download="BikeCare_AI_Project_Documentation.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-950/70 hover:bg-emerald-900/90 text-emerald-400 border border-emerald-800/60 font-medium text-xs transition-colors"
+            >
+              <Sparkles className="w-3.5 h-3.5" />
+              Download Report (PDF)
+            </a>
+            <a 
+              href="/BikeCare_AI_Project_Documentation.docx" 
+              download="BikeCare_AI_Project_Documentation.docx"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-cyan-950/70 hover:bg-cyan-900/90 text-cyan-400 border border-cyan-800/60 font-medium text-xs transition-colors"
+            >
+              <Sparkles className="w-3.5 h-3.5" />
+              Download Report (DOCX)
+            </a>
+            <a 
+              href="/bikecare-ai-project.tar.gz" 
+              download="bikecare-ai-project.tar.gz"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-amber-950/70 hover:bg-amber-900/90 text-amber-400 border border-amber-800/60 font-medium text-xs transition-colors"
+            >
+              <Sparkles className="w-3.5 h-3.5" />
+              Project Archive (.tar.gz)
+            </a>
+            <span>15-Day Service Warranty</span>
           </div>
         </div>
       </div>
