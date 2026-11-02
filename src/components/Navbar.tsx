@@ -1,4 +1,3 @@
-import React from 'react';
 import { 
   Wrench, 
   Sparkles, 
@@ -91,8 +90,8 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab }) => {
             </button>
           </nav>
 
-          {/* Action Area: Emergency Contact & Book CTA for customers */}
-          <div className="flex items-center gap-3">
+          {/* Action Area: Emergency Contact & Book CTA */}
+          <div className="flex items-center gap-2.5">
             <div className="hidden lg:flex items-center gap-2 text-xs text-slate-400 pr-2 border-r border-slate-800">
               <PhoneCall className="w-3.5 h-3.5 text-cyan-400" />
               <span>Workshop: <strong className="text-slate-200">1-800-BIKE-AI</strong></span>

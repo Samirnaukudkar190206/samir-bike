@@ -89,14 +89,15 @@ export const api = {
   },
 
   // Admin
-  async adminLogin(pin: string): Promise<{ success: boolean; token: string; user: any }> {
+  async adminLogin(credentials: string | { pin?: string; password?: string; username?: string }): Promise<{ success: boolean; token: string; user: any }> {
+    const payload = typeof credentials === 'string' ? { pin: credentials } : credentials;
     const res = await fetch('/api/admin/login', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ pin }),
+      body: JSON.stringify(payload),
     });
     const data = await res.json();
-    if (!res.ok) throw new Error(data.error || 'Invalid passcode');
+    if (!res.ok) throw new Error(data.error || 'Invalid admin credentials');
     return data;
   },
 

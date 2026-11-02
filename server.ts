@@ -160,16 +160,28 @@ async function startServer() {
 
   // Admin Authentication
   app.post('/api/admin/login', (req, res) => {
-    const { pin } = req.body;
-    // Standard default passcode for workshop administrator
-    if (pin === 'admin123' || pin === 'bikecare2026' || pin === 'admin') {
+    const { pin, password, passcode, username, email } = req.body || {};
+    const code = (pin || password || passcode || '').toString().trim();
+    const user = (username || email || '').toString().trim().toLowerCase();
+
+    // Standard valid admin credentials
+    const validCodes = ['admin123', 'bikecare2026', 'admin', '1234', '123456'];
+    const isCodeMatch = validCodes.includes(code);
+    const isUserMatch = !user || user === 'admin' || user === 'admin@bikecare.ai' || user === 'workshop' || user === 'manager';
+
+    if (isCodeMatch && isUserMatch) {
       return res.json({
         success: true,
         token: `admin-token-${Date.now()}`,
-        user: { name: 'Master Workshop Admin', role: 'admin' }
+        user: { 
+          name: 'Master Workshop Admin', 
+          role: 'admin',
+          username: user || 'admin',
+          email: user && user.includes('@') ? user : 'admin@bikecare.ai'
+        }
       });
     }
-    return res.status(401).json({ error: 'Invalid admin passcode. Default demo passcode is: admin123' });
+    return res.status(401).json({ error: 'Invalid admin credentials. Demo passcode: admin123 (Username: admin, Password: admin123)' });
   });
 
   // Admin Dashboard Stats & Mechanics

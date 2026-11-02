@@ -33,22 +33,22 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-3">Quick Services</h4>
             <ul className="space-y-2">
               <li>
-                <button onClick={() => onNavigate('diagnostics')} className="hover:text-cyan-400 transition-colors">
+                <button onClick={() => onNavigate('diagnostics')} className="hover:text-cyan-400 transition-colors cursor-pointer">
                   AI Sound & Noise Diagnostic
                 </button>
               </li>
               <li>
-                <button onClick={() => onNavigate('booking')} className="hover:text-cyan-400 transition-colors">
+                <button onClick={() => onNavigate('booking')} className="hover:text-cyan-400 transition-colors cursor-pointer">
                   Book Doorstep Service
                 </button>
               </li>
               <li>
-                <button onClick={() => onNavigate('tracker')} className="hover:text-cyan-400 transition-colors">
+                <button onClick={() => onNavigate('tracker')} className="hover:text-cyan-400 transition-colors cursor-pointer">
                   Live Bike Job Card Tracker
                 </button>
               </li>
               <li>
-                <button onClick={() => onNavigate('services')} className="hover:text-cyan-400 transition-colors">
+                <button onClick={() => onNavigate('services')} className="hover:text-cyan-400 transition-colors cursor-pointer">
                   Service Packages & Pricing
                 </button>
               </li>

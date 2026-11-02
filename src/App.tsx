@@ -180,7 +180,7 @@ export default function App() {
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col font-sans selection:bg-cyan-500 selection:text-slate-950">
       
-      {/* Customer Navigation Bar (No admin button) */}
+      {/* Navigation Bar (Pure Customer View) */}
       <Navbar 
         activeTab={activeTab} 
         setActiveTab={setActiveTab} 
@@ -252,11 +252,13 @@ export default function App() {
         )}
       </main>
 
-      {/* Customer Footer (No admin links) */}
-      <Footer onNavigate={(tab) => {
-        setActiveTab(tab);
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      }} />
+      {/* Customer Footer */}
+      <Footer 
+        onNavigate={(tab) => {
+          setActiveTab(tab);
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }} 
+      />
 
     </div>
   );
